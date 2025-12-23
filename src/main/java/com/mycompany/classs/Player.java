@@ -5,8 +5,12 @@ package com.mycompany.classs;
  */
 public class Player extends Charecter {
 
-    public Player(String name, int health) {
+    public Player(String name, double health) {
         super(name, health);
+    }
+
+    public Player() {
+
     }
 
     /**
@@ -28,6 +32,14 @@ public class Player extends Charecter {
     @Override
     public void displayAbsInfo() {
         System.out.println(this);
+    }
+
+    public void setPlayerHealth(double health) {
+        if (health <= 0 || health > 100) {
+            this.setHealth(100);
+            return;
+        }
+        this.setHealth(health);
     }
 
     @Override

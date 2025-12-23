@@ -16,6 +16,10 @@ public abstract class Charecter {
         this.health = health;
     }
 
+    Charecter() {
+
+    }
+
     public Inventory getInventory() {
         return inventory;
     }
@@ -41,6 +45,11 @@ public abstract class Charecter {
     }
 
     public void setHealth(double health) {
+        if (health <= 0) {
+            this.health = 100;
+            return;
+        }
+
         this.health = health;
     }
 

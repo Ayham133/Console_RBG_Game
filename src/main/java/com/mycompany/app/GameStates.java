@@ -17,15 +17,21 @@ public class GameStates {
      * @return true if the Initieation prosesse goes will, false otherwise.
      */
     public static boolean initGame() {
-        Scanner input = new Scanner(System.in);
-        String playerName;
+        String playerName = inputPlayerName();
 
-        System.out.print("Enter ur name: ");
-        playerName = input.nextLine();
-        player = new Player(playerName, 100);
-
-        input.close();
         return true;
+    }
+
+    /**
+     * Returns the playerName.
+     * 
+     * @return ther playerName.
+     */
+    public static String inputPlayerName() {
+        System.out.print("Enter ur name: ");
+        String playerName = InputOutPut.inputStringLine();
+
+        return playerName;
     }
 
 }

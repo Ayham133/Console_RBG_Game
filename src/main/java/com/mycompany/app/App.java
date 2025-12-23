@@ -1,8 +1,6 @@
 package com.mycompany.app;
 
 import java.util.Scanner;
-import com.mycompany.classs.*;
-import com.mycompany.enums.Rarity;
 
 /**
  * Hello world!
@@ -11,12 +9,32 @@ import com.mycompany.enums.Rarity;
 public class App {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter ur name: ");
-        String name = input.nextLine();
+        // game deffenition by user input.
+        GameDefinition def = new GameDefinition();
 
-        Charecter player = new Player(name, 100);
-        player.displayAbsInfo();
-        input.close();
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            Command cmd;
+            System.out.print("\n> ");
+            String input = scanner.nextLine();
+
+            if (input.equals("start"))
+                break;
+
+            try {
+                cmd = new Command(input);
+                cmd.parse();
+                System.out.println("parsing is done.");
+                // cmd.execute();
+
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+
+        }
+
+        scanner.close();
+        // game init function
+        // GameStates.initGame();
     }
 }
