@@ -1,7 +1,7 @@
 package com.mycompany.app;
 
-import com.mycompany.classs.Item;
-import com.mycompany.classs.Player;
+import java.util.Scanner;
+import com.mycompany.classs.*;
 import com.mycompany.enums.Rarity;
 
 /**
@@ -10,6 +10,13 @@ import com.mycompany.enums.Rarity;
  */
 public class App {
     public static void main(String[] args) {
-        Player player = new Player("Steve", 100);
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter ur name: ");
+        String name = input.nextLine();
+
+        Charecter player = new Player(name, 100);
+        player.displayAbsInfo();
+        input.close();
     }
 }

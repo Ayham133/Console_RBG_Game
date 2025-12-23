@@ -11,6 +11,11 @@ public abstract class Charecter {
     private double health;
     private Inventory inventory = new Inventory();
 
+    Charecter(String name, double health) {
+        this.name = name;
+        this.health = health;
+    }
+
     public Inventory getInventory() {
         return inventory;
     }
@@ -45,5 +50,15 @@ public abstract class Charecter {
     public void displayInventory() {
         System.out.println(inventory);
     }
+
+    /**
+     * Displays this Charecter's info
+     */
+    public abstract void displayInfo();
+
+    /**
+     * Displays the absolot info about this Charecter includes the class.
+     */
+    public abstract void displayAbsInfo();
 
 }
