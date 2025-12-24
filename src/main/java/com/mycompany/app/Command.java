@@ -1,5 +1,7 @@
 package com.mycompany.app;
 
+import com.mycompany.classs.Player;
+
 /**
  * Command
  */
@@ -102,11 +104,17 @@ public class Command {
 
         switch (operand) {
             case PLAYER_NAME_OPERAND: {
+                if (GameDefinition.player == null)
+                    GameDefinition.player = new Player();
+
                 GameDefinition.player.setName(value);
                 break;
             }
 
             case PLAYER_HEALTH_OPERAND: {
+
+                if (GameDefinition.player == null)// check for null
+                    GameDefinition.player = new Player();
                 double health;
                 try {
                     health = Double.parseDouble(value);

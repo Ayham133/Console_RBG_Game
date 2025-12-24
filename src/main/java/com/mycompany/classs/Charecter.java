@@ -13,7 +13,7 @@ public abstract class Charecter {
 
     Charecter(String name, double health) {
         this.name = name;
-        this.health = health;
+        setHealth(health);
     }
 
     Charecter() {

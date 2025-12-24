@@ -9,9 +9,6 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
-        // game deffenition by user input.
-        GameDefinition def = new GameDefinition();
-
         Scanner scanner = new Scanner(System.in);
         while (true) {
             Command cmd;
@@ -24,8 +21,6 @@ public class App {
             try {
                 cmd = new Command(input);
                 cmd.parse();
-                System.out.println("parsing is done.");
-                // cmd.execute();
 
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
@@ -33,6 +28,9 @@ public class App {
 
         }
 
+        GameDefinition.execute();
+        System.out.println(GameStates.getSeed());
+        System.out.println(GameStates.getPlayer());
         scanner.close();
         // game init function
         // GameStates.initGame();

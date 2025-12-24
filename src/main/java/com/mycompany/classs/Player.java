@@ -10,7 +10,7 @@ public class Player extends Charecter {
     }
 
     public Player() {
-
+        super("Player", 100);
     }
 
     /**
@@ -35,6 +35,7 @@ public class Player extends Charecter {
     }
 
     public void setPlayerHealth(double health) {
+
         if (health <= 0 || health > 100) {
             this.setHealth(100);
             return;
