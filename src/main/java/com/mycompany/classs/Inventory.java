@@ -43,10 +43,17 @@ public class Inventory {
      * @return ture if the itme romoved or part of it, false otherwise.
      */
     public boolean removeItem(UUID itemId, int quantityToRemove) {
-        if (inventory.containsKey(itemId) && inventory.get(itemId).getQuantity() >= quantityToRemove) {
+        if (inventory.containsKey(itemId) && inventory.get(itemId).getQuantity() > quantityToRemove) {// remove partion
+                                                                                                      // of the item.
             int updatedQuantity = inventory.get(itemId).getQuantity() - quantityToRemove;
             inventory.get(itemId).setQuantity(updatedQuantity);
             return true;
+        } else if (inventory.containsKey(itemId) && inventory.get(itemId).getQuantity() == quantityToRemove) {// remove
+                                                                                                              // all the
+                                                                                                              // item.
+            inventory.remove(itemId);
+            return true;
+
         } else
             return false;
     }

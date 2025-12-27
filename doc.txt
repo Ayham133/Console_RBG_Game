@@ -1,0 +1,2 @@
+TODO:
+1. Learn about Graph to implement the map generation.
