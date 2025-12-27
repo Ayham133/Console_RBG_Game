@@ -38,7 +38,9 @@ public class GameStates {
     }
 
     public static void setSeed(Long newSeed) {
-        if (newSeed != null)
+        if (seed == null)
+            seed = System.currentTimeMillis();
+        else
             seed = newSeed;
     }
 

@@ -14,6 +14,13 @@ public abstract class Item {
     private boolean STACKABLE;
     private int quantity;
 
+    public Item(String name, Rarity rarity, boolean STACKABLE, int quantity) {
+        this.name = name;
+        this.rarity = rarity;
+        this.STACKABLE = STACKABLE;
+        this.quantity = quantity;
+    }
+
     public UUID getID() {
         return ID;
     }

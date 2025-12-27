@@ -58,8 +58,18 @@ public class Inventory {
             return false;
     }
 
+    /**
+     * Returns True if the inventory contains the item, false otherwise.
+     *
+     * @param itemId
+     */
+    public boolean contains(UUID itemId) {
+        return inventory.containsKey(itemId);
+    }
+
     @Override
     public String toString() {
         return inventory.toString();
     }
+
 }
